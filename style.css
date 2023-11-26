@@ -1,0 +1,13 @@
+/*
+
+Theme name: Just hanging
+Auther: Nanna Jessen
+
+*/ 
+
+.navbar-brand{
+    display: flexbox;
+    align-content: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
