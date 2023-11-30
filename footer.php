@@ -59,7 +59,7 @@ endif;
    <?php if ( get_field('firma_navn' ) ): ?> 
     <p><?php echo esc_html( get_field('firma_navn') ); ?></p>
     <?php endif; ?>
-    <br>
+    
 <p>Adresse:</p>
     <?php if ( get_field('adresse_felt' ) ): ?> 
     <p><?php echo esc_html( get_field('adresse_felt') ); ?></p>

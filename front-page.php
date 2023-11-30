@@ -7,6 +7,17 @@ if (have_posts()) :
     endwhile;
 endif;
 ?>
+
+<?php
+$forhandlere = new WP_Query(
+array(
+"post_type" => "post-type-slug",
+"posts_per_page" => -1
+)
+);
+?>
+
+
 <main>
 <!-- ACF hero-video -->
  <section>
@@ -21,7 +32,7 @@ endif;
 
 
 
-     <!-- Header - set the background image for the header in the line below-->
+<!-- Hero-->
      
      <header class="py-5 bg-image-full justify-content-center d-flex" style="background: url('<?php the_field("hero_images") ?>')">
        
@@ -36,30 +47,118 @@ endif;
             </div>
         </header>
         
-       
+ <br>
+<!-- business partners text-->
+<section class="bg-light py-5 py-xl-6">
 
-        <!--2 section kort beskrivelse under hero-->
+   <div class="container mb-5 mb-md-6">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
+        <h2 class="mb-4 display-5">Forhandler</h2>
+        <p class="text-secondary mb-4 mb-md-5">...</p>
+        <hr class="w-50 mx-auto mb-0 text-secondary">
+      </div>
+    </div>
+  </div>
+
+<!-- business partners images-->
+<div class="container overflow-hidden">
+    
+    <div class="row gy-5 gy-md-6">
+    <?php if($forhandlere->have_posts()): ?>
+    <?php while($forhandlers->have_posts()): $forhandlere->the_post() ?>
+       <div class="col-6 col-md-3 align-self-center text-center">
+       <div class="col-lg-6 col-md-6" style="height: 100%">
+    
+       <img src=<img src="<?php the_field("forhandler_logo") ?>" class="img-responsive" style="vertical-align: bottom; position: absolute;">    
+  </div>
+</div>
+      <?php endwhile; ?>
+      <?php wp_reset_postdata() ?>
+    </div>
+  </div>
+      <?php endif; ?>
+</section>
+<br>
+
+
+<!-- new card -->
+
+<section id="services" class="container">
+   <h2 class="display-4 text-center mt-5 mb-3">Our Services</h2>
+   
+   <div id="boxes" class="row text-center">
+      <div class="col-md-4 mb-4" >
+         <div class="card h-100" >
+         <?php if (get_field('showcase_images1')) : ?>
+            <img class="card-img-top" src="<?php echo esc_url(get_field('showcase_images1')); ?>" alt="Design">
+            <div class="card-body">
+               <h4 class="card-title">Design</h4>
+               <p class="card-text">Deliver the best user experience 
+               with our carefully designed responsive websites and applications!</p>
+            </div>
+            <div class="card-footer py-4">
+               <a href="#" class="btn btn-secondary">See portfolio &raquo;</a>
+            </div>
+         </div>
+      </div>
+      
+      <div class="col-md-4 mb-4">
+         <div class="card h-100">
+            <img class="card-img-top" src="development.jpg" alt="Development">
+            <div class="card-body">
+               <h4 class="card-title">Development</h4>
+                  <p class="card-text">You need software that works on every device. 
+                  Leverage the latest technologies and the most powerful tools!</p>
+            </div>
+            <div class="card-footer py-4">
+               <a href="#" class="btn btn-secondary">See projects &raquo;</a>
+            </div>
+         </div>
+      </div>
+      <?php endif; ?>
+      
+      <div class="col-md-4 mb-4">
+         <div class="card h-100">
+            <img class="card-img-top" src="analytics.jpg" alt="Analytics">
+            <div class="card-body">
+               <h4 class="card-title">Analytics</h4>
+               <p class="card-text">Consult our experts to set up proper goals and 
+               find the best stack for your next application!</p>
+            </div>
+            <div class="card-footer py-4">
+               <a href="#" class="btn btn-secondary">See testimonials &raquo;</a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+<!--2 section kort beskrivelse under hero-->
         <section class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h2>Full Width Backgrounds</h2>
-                        <p class="lead">A single, lightweight helper class allows you to add engaging, full width background images to sections of your page.</p>
-                        <p class="mb-0">The universe is almost 14 billion years old, and, wow! Life had no problem starting here on Earth! I think it would be inexcusably egocentric of us to suggest that we're alone in the universe.</p>
+                    <div class="col-lg-8">
+                        <h2>Optimér din plads med vores væghængte tørrestativ!</h2>
+                        <p class="lead">Skønhed er ikke vores eneste fokus.</p>
+                        <p class="mb-0">Vores skjulte design tørrestativer er skabt med kvalitet og funktionalitet i højsædet. Vi forstår vigtigheden af at skabe produkter, der ikke kun ser godt ud, men også leverer på deres løfte om at gøre hverdagen mere bekvem. Fra smarte folde-mekanismer til holdbare materialer er vores tørrestativer designet til at imødekomme alle aspekter af moderne livsstil.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Modal gallery -->
-<section class="">
-  <!-- Section: Images -->
-  <section class="product-pic">
-    <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-        <div
-          class="bg-image hover-overlay ripple shadow-1-strong rounded"
-          data-ripple-color="light"
+
+
+ <!-- Modal gallery -->
+  <section class="">
+    <!-- Section: Images -->
+       <section class="product-pic">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+            <div
+            class="bg-image hover-overlay ripple shadow-1-strong rounded"
+            data-ripple-color="light"
         >
         <?php if (get_field('showcase_images1')) : ?>
           <img
@@ -202,7 +301,7 @@ endif;
             <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
-                        <h2>Engaging Background Images</h2>
+                        <h2>Optimér din plads med vores væghængte tørrestativ!</h2>
                         <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
                         <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
                     </div>
@@ -220,47 +319,21 @@ endif;
         <section class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h2>Engaging Background Images</h2>
-                        <p class="lead">The background images used in this template are sourced from Unsplash and are open source and free to use.</p>
-                        <p class="mb-0">I can't tell you how many people say they were turned off from science because of a science teacher that completely sucked out all the inspiration and enthusiasm they had for the course.</p>
+                    <div class="col-lg-8">
+                        <h2>Vi tror på, at selv de mest funktionelle elementer i hjemmet fortjener opmærksomhed</h2>
+                        <p class="lead"></p>
+                        <p class="mb-0">Vores sortiment af skjulte design tørrestativer afspejler denne overbevisning. Fra elegante linjer til diskrete farver er hvert træk omhyggeligt udformet for at tilføre rummet en subtil, men bemærkelsesværdig skønhed. Vi tror på, at det, der er praktisk, også kan være smukt.</p>
                     </div>
                 </div>
             </div>
         </section>
         </section>
 
-        <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
-        </footer>
+       
         
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-
-        <!--card-->
-
-        <div class="container">
-  <div class="card">
-     <div class="card__image-container">
-       <img class="card__image" src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2126&q=80" alt="">
-    </div>
       
-      <svg class="card__svg" viewBox="0 0 800 500">
 
-        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"/>
-        <path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"/>
-      </svg>
-    
-     <div class="card__content">
-       <h1 class="card__title">Lorem ipsum</h1>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dolor praesentium at quod autem omnis, amet eaque unde perspiciatis adipisci possimus quam facere illo et quisquam quia earum nesciunt porro.</p>
-    </div>
-  </div>
-</div>
+       
     
     </body>
 
@@ -272,96 +345,52 @@ endif;
     <?php endif; ?>
     </div>
 </article>
-</html>
 
----
-
-
-</html>
 </main>
 
 <?php get_footer() ?> 
 
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Core theme JS-->
+        <script src="js/scripts.js">
+
+</script>
+
 <style>
+    *{
+        background-color: 424444;
 
-* {
-  box-sizing: border-box;
-  line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
-}
+    }
 
-img {
-  max-width: 100%;
-}
+    #boxes{
+        display: flex;
+        flex-direction: row;
+       
+    }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #444;
-}
+    .bg-image.hover-overlay.ripple.shadow-1-strong.rounded{
+        height: 80%;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
 
-.card {
-  position: relative;
-  background: #333;
-  width: 400px;
-  height: 75vh;
-  border-radius: 6px;
-  padding: 2rem;
-  color: #aaa;
-  box-shadow: 0 .25rem .25rem rgba(0,0,0,0.2),
-    0 0 1rem rgba(0,0,0,0.2);
-  overflow: hidden;
-  
-  &__image-container {
-    margin: -2rem -2rem 1rem -2rem;
-  }
-  
-  &__line {
-  opacity: 0;
-  animation: LineFadeIn .8s .8s forwards ease-in;
-  }
+    .bg-image.hover-overlay.ripple.shadow-1-strong.rounded.img{
+        height: 80%;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+       
+        
+    }
 
-  &__image {
-    opacity: 0;
-    animation: ImageFadeIn .8s 1.4s forwards;
-  }
-
-  &__title {
-    color: white;
-    margin-top: 0;
-    font-weight: 800;
-    letter-spacing: 0.01em;
-  }
-  
-  &__content {
-    margin-top: -1rem;
-    opacity: 0;
-    animation: ContentFadeIn .8s 1.6s forwards;
-  }
-  
-  &__svg {
-    position: absolute;
-    left: 0;
-    top: 115px;
-  }
-}
-
-@keyframes LineFadeIn {
-  0% { opacity: 0; d: path("M 0 300 Q 0 300 0 300 Q 0 300 0 300 C 0 300 0 300 0 300 Q 0 300 0 300 "); stroke: #fff; }
-  50% { opacity: 1; d: path("M 0 300 Q 50 300 100 300 Q 250 300 350 300 C 350 300 500 300 650 300 Q 750 300 800 300"); stroke: #888BFF; }
-  100% { opacity: 1; d: path("M -2 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 802 400"); stroke: #545581; }
-}
-
-@keyframes ContentFadeIn {
-  0% { transform: translateY(-1rem); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes ImageFadeIn {
-  0% { transform: translate(-.5rem, -.5rem) scale(1.05); opacity: 0; filter: blur(2px); }
-  50% { opacity: 1; filter: blur(2px); }
-  100% { transform: translateY(0) scale(1.0); opacity: 1; filter: blur(0); }
-}
-</style>
+    .customize-support{
+        
+      background-color: 424444;
+    }
+    </style>

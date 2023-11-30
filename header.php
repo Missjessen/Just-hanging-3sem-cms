@@ -14,11 +14,31 @@
 <!-- Just an image -->
 <nav class="navbar navbar-light bg-light">
 <a class="navbar-brand" href="#">
-      <img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" width="230" height="50" alt="" >
+      <img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" width="200" height="45" alt="" >
       
     </a>
 </nav>
 
 
 
+<style>
 
+.navbar-brand{
+    display: flex;
+    align-content: center;
+  justify-content: center;
+  margin-left: 2rem;
+}
+
+/* .navbar.navbar-light.bg-light{ */
+    /* height: 14vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow:  1px 1px 1px  rgba(148, 148, 148, 0.4);
+    position: fixed;
+    background-color: f6f6f6;
+    
+    z-index: 100;} */
+    </style>
