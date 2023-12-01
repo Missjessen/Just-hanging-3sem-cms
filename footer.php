@@ -1,7 +1,3 @@
-<?php wp_footer()?>
-
-<?php get_header() ?>
-
 <?php
 if (have_posts()) :
     while (have_posts()) : the_post(); 
@@ -113,14 +109,19 @@ endif;
 <div class="container">
 <div class="row">
 <div class="col-sm-6">
-<p>Copyright © 2017. Your Company.</p>
+<p></p>
 </div>
 <div class="col-sm-6"></div>
 </div>
 </div>
 </section>
 </footer>
+
+
+</main>
 </body>
+<?php wp_footer()?>
+
 
 <style scoped>
 /* Footer */
