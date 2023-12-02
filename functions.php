@@ -3,9 +3,8 @@ function justhang_styles() {
   wp_enqueue_style( 'style-sheet', get_stylesheet_directory_uri() . '/style.css', array(), '1.0' );
   wp_enqueue_style("justhang-style", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css");
   wp_enqueue_style("bookmania", "https://use.typekit.net/afc3onk.css");
-  wp_enqueue_style("font-awesome", "https://use.typekit.net/afc3onk.css");
-  wp_enqueue_style("font-awesome", " https://use.typekit.net/afc3onk.css");
-  wp_enqueue_style("font-awesome", "  https://use.typekit.net/afc3onk.css");
+ 
+ 
  
 
  

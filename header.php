@@ -15,7 +15,8 @@
 
 <nav>
     <section>
-  <div id="top-af-siden" class="copyright">
+                                  <!----------- øverst  ------------->
+  <div id="top-af-siden" >
       <div class="container">
           <div class="row">
              <div class="col-sm-6">
@@ -29,7 +30,7 @@
     </div>
 </section>
 
-<!-- Just an image -->
+                                    <!----------- logo ------------->
 <div class="navbar navbar-light bg-light">
 <a class="navbar-brand" href="#">
       <img src="<?php echo get_stylesheet_directory_uri() ?>/img/logo.png" width="200" height="45" alt="" >
@@ -41,43 +42,4 @@
 
 <style>
 
-#top-af-siden{
-
-    background-color: #424444 !important;
-    color: #f6f6f6;
-}
-/* tekst i toppen*/
-.navbar-brand{
-    display: flex;
-    align-content: center;
-  justify-content: center;
-  height: 8vh;
-  font-family: "neue-haas-grotesk-display", sans-serif !important;
-font-weight: thin;
-font-style: italic;
-font-size: 1rem;
-  
-}
-
-/* tekst i toppen*/
-div.col-sm-6{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    font-style: italic;
-    font-weight: 150;
-    margin-top: 4px;
-    
-}
-.navbar.navbar-light.bg-light{ */
-     height: 12vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow:  1px 1px 1px  rgba(148, 148, 148, 0.4);
-
-    background-color: f6f6f6; 
-    
-    z-index: 100;} 
     </style>
