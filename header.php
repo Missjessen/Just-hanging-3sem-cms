@@ -18,11 +18,11 @@
   <div id="top-af-siden" class="copyright">
       <div class="container">
           <div class="row">
-             <div class="col-sm-6 fa-sharp fa-thin fa-check">
+             <div class="col-sm-6">
                 <p>Dansk design og kvalitet</p>
               </div>
              <div class="col-sm-6">
-            <p><i class="fa-sharp fa-thin fa-check"></i>Nem og hurtig installation med 100 dages tilfredshedsgaranti.</p>
+            <p></i>Nem og hurtig installation med 100 dages tilfredshedsgaranti.</p>
           </div>
        </div>
     </div>
@@ -52,6 +52,10 @@
     align-content: center;
   justify-content: center;
   height: 8vh;
+  font-family: "neue-haas-grotesk-display", sans-serif !important;
+font-weight: thin;
+font-style: italic;
+font-size: 1rem;
   
 }
 

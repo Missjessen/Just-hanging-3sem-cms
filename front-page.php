@@ -17,7 +17,16 @@ $forhandlere = new WP_Query(
 );
 ?>
 
-        <!-- ACF hero-video -->
+<?php
+$service = new WP_Query(
+    array(
+        "post_type" => "service",
+        "posts_per_page" => -1
+    )
+);
+?>
+
+                                    <!------------ ACF hero-video ------------>
        <!--  <section>
             <div class="video">
                 <?php if (get_field('hero-video')) : ?>
@@ -29,35 +38,37 @@ $forhandlere = new WP_Query(
 
 
 
-        <!-- Hero images-->
-        <section class="hero">
-            <div class="py-5 bg-image-full justify-content-center d-flex" style="background: url('<?php the_field("hero_images") ?>')">
+                                    <!-------------- Hero images--------------->
+  <section class="hero">
+     <div class="py-5 bg-image-full justify-content-center d-flex" style="background: url('<?php the_field("hero_images") ?>')">
 
-                <div class="bottom-text text-center ">
+<!--tekst hero-->
+        <div class="bottom-text text-center ">
 
-                    <?php if (get_field('intro_tekst')) : ?>
+                   <!--   <?php if (get_field('intro_tekst')) : ?>    
                         <h1 class="text-white fs-3 fw-bolder"><?php echo esc_html(get_field('intro_tekst')); ?></h1>
                     <?php endif; ?>
+                    
                     <?php if (get_field('sub_tekst_til_intro')) : ?>
                         <h2 class="text-white-50 mb-0"> <?php echo esc_html(get_field('sub_tekst_til_intro')); ?></h2>
-                    <?php endif; ?>
-                </div>
-            </div>
-            </header>
-        </section>
-
-        <br>
-
-<!--content test 1-->
-        <section class="py-5">
-            <article class="container my-5">
+                    <?php endif; ?> 
+ -->
+         </div>
+       </div>
+     </header>
+   </section>
+<hr>
+                                   <!----------content test 1-------------->
+        <article class="py-5">
+            <div class="container my-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <?php if (get_field('pep_overskrift_1')) : ?>
-                            <h1 class="text-white fs-3 fw-bolder"><?php echo esc_html(get_field('pep_overskrift_1')); ?></h1>
+
+                        <?php if (get_field('pep_overskrift_1')) : ?> <!--overskrift-->
+                            <h1 class=" fs-3 fw-bolder"><?php echo esc_html(get_field('pep_overskrift_1')); ?></h1>
                         <?php endif; ?>
 
-                        <?php if (get_field('pep_sub_1')) : ?>
+                        <?php if (get_field('pep_sub_1')) : ?><!--sub-->
                             <h2 class="lead"><?php echo esc_html(get_field('pep_sub_1')); ?></h2>
 
                         <?php endif; ?>
@@ -68,11 +79,13 @@ $forhandlere = new WP_Query(
 
                     </div>
                 </div>
+               </div>
             </article>
-        </section>
-<!---------------->     
+            
+    
 
-<!-- billeder af produkter-->
+
+                               <!----------- billeder af produkter----------->
  
 <section> 
    <!-- billede 1-->
@@ -89,7 +102,7 @@ $forhandlere = new WP_Query(
         <?php endif; ?>
 
 
-         <!-- billede 2-->
+   <!-- billede 2-->
             <div class="col-lg-2 mb-2 mb-lg-0">
                 <div class="bg-image ripple shadow-1-strong rounded" data-ripple-color="light">
 
@@ -103,7 +116,7 @@ $forhandlere = new WP_Query(
         <?php endif; ?>
 
 
-         <!-- billede 3-->
+   <!-- billede 3-->
             <div class="col-lg-2 mb-2 mb-lg-0">
                 <div class="bg-image ripple shadow-1-strong rounded" data-ripple-color="light">
                     <?php if (get_field('show_case_6')) : ?>
@@ -115,7 +128,7 @@ $forhandlere = new WP_Query(
         <?php endif; ?>
 
 
-         <!-- billede 4-->
+   <!-- billede 4-->
         <div class="col-lg-2 mb-2 mb-lg-0">
             <div class="bg-image ripple shadow-1-strong rounded" data-ripple-color="light">
                 <?php if (get_field('show_case_7')) : ?>
@@ -127,33 +140,42 @@ $forhandlere = new WP_Query(
         <?php endif; ?>
       </div>
     </section>
-<!----------------> 
+
 
         <hr>
 
-                                    <!---------Skal måske ind-------> 
-        <!--  Content tekst 2-->
-        <!-- <section class="py-5">
+                                    <!---------Skal måske ind, ekstra tekst-------> 
+                                                <!--  Content tekst 2-->
+        <article class="py-5">
             <div class="container my-5">
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                        
-                        <h2 class="lead">Vi tror på, at selv de mest funktionelle elementer i hjemmet fortjener opmærksomhed</h2>
-                        <p class="mb-0">Vi tror på, at selv de mest funktionelle elementer i hjemmet fortjener opmærksomhed, og vores sortiment af skjulte design tørrestativer afspejler denne overbevisning. Fra elegante linjer til diskrete farver er hvert træk omhyggeligt udformet for at tilføre rummet en subtil, men bemærkelsesværdig skønhed. Vi tror på, at det, der er praktisk, også kan være smukt.ores sortiment af skjulte design tørrestativer afspejler denne overbevisning. Fra elegante linjer til diskrete farver er hvert træk omhyggeligt udformet for at tilføre rummet en subtil, men bemærkelsesværdig skønhed. Vi tror på, at det, der er praktisk, også kan være smukt.</p>
-                    </div>
+                        
+                    <?php if (get_field('pep_overskrift_2')) : ?> <!--overskrift-->
+                            <h2 class=" fs-3 fw-bolder"><?php echo esc_html(get_field('pep_overskrift_2')); ?></h2>
+                        <?php endif; ?>
+
+                        <?php if (get_field('pep_sub_2')) : ?><!--sub-->
+                            <h3 class="lead"><?php echo esc_html(get_field('pep_sub_2')); ?></h3>
+
+                        <?php endif; ?>
+
+                        <?php if (get_field('pep_teskt_2')) : ?>
+                            <p class="mb-0"><?php echo esc_html(get_field('pep_teskt_2')); ?></p>
+                        <?php endif; ?>
                 </div>
             </div>
-        </section> --> 
+        </article>  
+
 
                                  <!------------- Content teskt 3-------------->
     
        <section class="py-5">
           <div class="container my-5">
               <div class="row justify-content-center">
-                  <div class="col-lg-8">
-                        <h2>Vi tror på, at selv de mest funktionelle elementer i hjemmet fortjener opmærksomhed</h2>
-                        <p class="lead"></p>
-                        <p class="mb-0">Vores sortiment af skjulte design tørrestativer afspejler denne overbevisning. Fra elegante linjer til diskrete farver er hvert træk omhyggeligt udformet for at tilføre rummet en subtil, men bemærkelsesværdig skønhed. Vi tror på, at det, der er praktisk, også kan være smukt.</p>
+                  <div class="col-lg-10">
+                        <h6 class="lead">Følg vores brugervenlige vejledning. Installationen er enkel og kræver kun grundlæggende værktøjer.</h6>
                     </div>
                 </div>
             </div>
@@ -181,65 +203,31 @@ $forhandlere = new WP_Query(
                                   <!---------------- service------------------>
 
         <section id="services" class="container">
-            <h2 class="display-4  mt-5 mb-3">Our Services</h2>
+            <h2 class="display-4  mt-5 mb-3">Vores Service</h2>
             <br>
 
-            <div id="boxes" class="row text-center">
+            <div id="boxes" class="row text-center d-flex justify-content-center align-self-center">
                 <div class="col-md-3 mb-4">
-                    <div class="card h-60">
-                        <?php if (get_field('service_1')) : ?>
-                            <img class="card-img-top" src="<?php echo esc_url(get_field('service_1')); ?>" alt="">
-                            <?php endif; ?>
+                    <div class="card h-60 d-flex align-self-center">
+                    <?php if ($service->have_posts()) : ?>
+            <?php while ($service->have_posts()) : $service->the_post() ?>
+                            <img class="card-img-top" src="<?php echo esc_url(get_field('service_pic')); ?>" alt="">
+                            
                             <div class="card-body">
-                            <?php if (get_field('service_trae_overskirft')) : ?>
-                                <h3 class="card-title"><?php echo esc_html(get_field('service_trae_overskirft')); ?></h3>
-                                <?php endif; ?>
-                                <?php if (get_field('service_trae_sub')) : ?>
-                                <p class="card-text"><?php echo esc_html(get_field('service_trae_sub')); ?></p>
+                           
+                                <h4 class="card-title"><?php echo esc_html(get_field('service__overskirft')); ?></h4>
+                               
+                                <p class="card-text"><?php echo esc_html(get_field('service_sub')); ?></p>
+
+                                <?php endwhile; ?>
+                                <?php wp_reset_postdata() ?>
                                 <?php endif; ?>
                             </div>
 
                     </div>
                 </div>
-       
-
-            
-
-            <div class="col-md-3 mb-4">
-                <div class="card h-60">
-                    <?php if (get_field('service_2')) : ?>
-                        <img class="card-img-top" src="<?php echo esc_url(get_field('service_2')); ?>" alt="Design">
-                        <div class="card-body">
-                            <?php if (get_field('skabsmontering_overskrift_')) : ?>
-                                <h3 class="card-title"><?php echo esc_html(get_field('skabsmontering_overskrift_')); ?></h3>
-                                <?php endif; ?>
-                                <?php if (get_field('skabsmontering_sub')) : ?>
-                                <p class="card-text"><?php echo esc_html(get_field('skabsmontering_sub')); ?></p>
-                                <?php endif; ?>
-                            </div>
-
-                </div>
             </div>
-        <?php endif; ?>
-
-        <div class="col-md-3 mb-4">
-            <div class="card h-60">
-                <?php if (get_field('service_3')) : ?>
-                    <img class="card-img-top" src="<?php echo esc_url(get_field('service_3')); ?>" alt="Design">
-                    <div class="card-body">
-                            <?php if (get_field('kvalitets_af_produkt_overskrift')) : ?>
-                                <h3 class="card-title"><?php echo esc_html(get_field('kvalitets_af_produkt_overskrift')); ?></h3>
-                                <?php endif; ?>
-                                <?php if (get_field('kvalitet_af_produkt_sub')) : ?>
-                                <p class="card-text"><?php echo esc_html(get_field('kvalitet_af_produkt_sub')); ?></p>
-                                <?php endif; ?>
-                            </div>
-
-            </div>
-        </div>
-    <?php endif; ?>
-            </div>
-        </section>
+         </section>
 
 
 
@@ -250,7 +238,7 @@ $forhandlere = new WP_Query(
         <article class="container-fluid">
             <div class="row">
                 <?php if (get_field('intro_tekst')) : ?>
-                    <h1 class="text-center mt-5 text-black"><?php echo esc_html(get_field('intro_tekst')); ?></h1>
+                    <hh5 class="text-center mt-5 text-black"><?php echo esc_html(get_field('intro_tekst')); ?></h5>
                 <?php endif; ?>
             </div>
         </article>
@@ -264,10 +252,9 @@ $forhandlere = new WP_Query(
  <div class="row justify-content-md-center">
      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
      <h2 class="mb-4 display-5">Forhandler</h2>
-     
-    
- 
- 
+
+<br>
+
 
 <!-- business partners images-->
        
@@ -283,16 +270,14 @@ $forhandlere = new WP_Query(
                 </div>
             <?php endwhile; ?>
             <?php wp_reset_postdata() ?>
-        <?php endif; ?>
-        <hr class="w-50 mx-auto mb-0 text-secondary">
+            <?php endif; ?>
+         <hr class="w-50 mx-auto mb-0 text-secondary">
         </div>
-        </div>
-        </div>
-      
-</section>
+       </div>
+      </div>
+    </section>
 <br>
----
-
+<br>
 
 
 <?php get_footer() ?>
@@ -445,9 +430,33 @@ font-style: normal;
         flex-direction: row;
       
     }
+
+    .card-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+
+    .card-text{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: start;
+        font-size: 12px;
+    }
     .montage{
      
         
 
     }
+
+    .col-md-3.mb-4{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
 </style>
