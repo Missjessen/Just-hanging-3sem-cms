@@ -39,7 +39,3 @@
 </nav>
 </section>
 
-
-<style>
-
-    </style>

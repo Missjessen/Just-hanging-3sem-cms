@@ -14,9 +14,13 @@ align-items: center;
 
 .divider-line-100 {
     width: 100%;
-    height: 4px;
-    background-color: #eeeeee;
+    height: 2px;
+    background-color: #8d806b;
     margin: 0;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 5%;
 }
 
 .divider-line-50 {
@@ -455,6 +459,14 @@ footer.nb-footer .copyright p {
 
 .col-md-3{
 display: flex;
+}
+
+.fs-3.fw-bolder{
+  font-size: 28px !important;
+  font-weight: 400 !important;
+ /*  line-height: 1.2; */
+  margin-top: -1.5rem;
+  color: #424444;
 }
 
 

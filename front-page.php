@@ -59,7 +59,9 @@ $service = new WP_Query(
         </div>
         </header>
     </section>
-    <hr>
+
+    
+    <br>
     <!----------content test 1-------------->
     <article class="row mx-0 my-5 justify-content-center">
 
@@ -142,9 +144,9 @@ $service = new WP_Query(
 <?php endif; ?>
             </div>
     </section>
-
-
-    <hr>
+<br>
+<br>
+    <hr class="divider-line-100">
 
     <!---------Skal måske ind, ekstra tekst------->
     <!--  Content tekst 2-->
@@ -200,9 +202,9 @@ $service = new WP_Query(
             </div>
         </div>
     </section>
-
-    <br>
-    <hr>
+<br>
+    <hr class="divider-line-100">
+    
 
 
     <!---------------- service------------------>
@@ -218,7 +220,7 @@ $service = new WP_Query(
                         <div class="card d-flex flex-grow-1 m-2 align-items-stretch" style="width:auto !important; min-width:33% !important">
 
                         
-                            <img class="card-img-top" src="<?php echo esc_url(get_field('service_pic')); ?>" alt="<?php echo $service_pic["alt"] ?>" />
+                            <img class="card-img-top" src="<?php echo esc_url(get_field('service_pic')); ?>" alt="" />
 
                             <div class="card-body">
 
@@ -279,7 +281,7 @@ $service = new WP_Query(
                         <?php wp_reset_postdata() ?>
                     <?php endif; ?>
 
-                    <hr class="divider-line-50">
+                    <hr class="divider-line-100">
                     <!--  </div> -->
                 </div>
             </div>
