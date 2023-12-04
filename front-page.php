@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="container-fluid">
+<div class="container-fluid g-0">
 
 
 <?php
